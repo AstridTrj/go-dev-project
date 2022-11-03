@@ -45,7 +45,7 @@ package main
 
 var a string
 
-func main() {
+func main_ex() {
    a = "G"
    print(a)
    f1()
