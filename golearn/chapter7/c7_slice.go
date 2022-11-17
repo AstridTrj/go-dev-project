@@ -23,4 +23,26 @@ func main() {
 	fmt.Println(items)
 	// 6.改变切片长度的过程称之为切片重组 reslicing
 	// 将切片扩展 1 位可以这么做：sl = sl[0:len(sl)+1]
+
+
+	slFrom := []int{1, 2, 3}
+	slTo := make([]int, 10)
+
+	n := copy(slTo, slFrom)
+	fmt.Println(slTo, slFrom)
+	fmt.Printf("Copied %d elements\n", n) // n == 3
+
+	sl3 := []int{1, 2, 3}
+	sl3 = append(sl3, 4, 5, 6)
+	fmt.Println(sl3)
+
+	var s string = "hello world"
+	st := s[2:5]
+
+	c := []byte(s)
+	c[3] = 'p'
+	s = string(c)
+	
+	fmt.Println(s, st)
+	// 7. 只有在没有任何切片指向的时候，底层的数组内存才会被释放
 }
